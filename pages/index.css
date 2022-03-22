@@ -39,6 +39,7 @@
 /*--- FOOTER ---*/
 
 @import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__copywriting/footer__copywriting.css);
 
 /*--- CONTAINER ---*/
 
