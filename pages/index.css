@@ -40,6 +40,7 @@
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copywriting/footer__copywriting.css);
+@import url(../blocks/footer/__body/footer__body.css);
 
 /*--- CONTAINER ---*/
 
