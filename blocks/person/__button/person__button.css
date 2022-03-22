@@ -1,0 +1,5 @@
+.person__button {
+  border: 1px solid var(--person-button);
+  background-color: var(--bg-page);
+  padding: 3px 6px;
+}

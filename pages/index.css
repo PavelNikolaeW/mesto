@@ -1,0 +1,47 @@
+
+/*--- NO BEM BLOCKS ---*/
+
+@import url(../vendor/normalize.css);
+@import url(../fonts/fonts.css);
+@import url(../variables/colors.css);
+
+/*--- PROFILE ---*/
+
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__person/profile__person.css);
+@import url(../blocks/profile/__button/profile__button.css);
+
+/*--- PHOTO ---*/
+
+@import url(../blocks/photo/photo.css);
+
+/*--- PERSON ---*/
+
+@import url(../blocks/person/person.css);
+@import url(../blocks/person/__text/person__text.css);
+@import url(../blocks/person/__subtext/person__subtext.css);
+@import url(../blocks/person/__name/person__name.css);
+@import url(../blocks/person/__img/person__img.css);
+@import url(../blocks/person/__group/person__group.css);
+@import url(../blocks/person/__button/person__button.css);
+
+/*--- PAGE ---*/
+
+@import url(../blocks/page/page.css);
+
+/*--- MAIN ---*/
+
+@import url(../blocks/main/main.css);
+
+/*--- HEADER ---*/
+
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__logo/header__logo.css);
+
+/*--- FOOTER ---*/
+
+@import url(../blocks/footer/footer.css);
+
+/*--- CONTAINER ---*/
+
+@import url(../blocks/container/container.css);

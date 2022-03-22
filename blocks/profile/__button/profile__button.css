@@ -1,0 +1,7 @@
+.profile__button {
+  align-self: center;
+  border: 2px solid var(--profile-button);
+  border-radius: 2px;
+  background-color: var(--bg-page);
+  padding: 12px 64px 10px 60px;
+}

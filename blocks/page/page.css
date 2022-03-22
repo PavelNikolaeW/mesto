@@ -1,0 +1,8 @@
+.page {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.2;
+  box-sizing: border-box;
+  background-color: var(--bg-page);
+  color: var(--color-page);
+}

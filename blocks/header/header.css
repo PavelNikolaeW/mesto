@@ -1,0 +1,6 @@
+.header {
+  border-bottom: 1px solid var(--header-border);
+  min-height: 109px;
+  display: flex;
+  align-items: center;
+}
