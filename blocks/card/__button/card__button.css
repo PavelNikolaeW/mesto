@@ -1,0 +1,5 @@
+.card__button {
+  border: none;
+  background-color: var(--card-footer);
+  padding: 5px;
+}

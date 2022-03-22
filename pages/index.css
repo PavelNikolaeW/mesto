@@ -10,10 +10,7 @@
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__person/profile__person.css);
 @import url(../blocks/profile/__button/profile__button.css);
-
-/*--- PHOTO ---*/
-
-@import url(../blocks/photo/photo.css);
+@import url(../blocks/profile/__button-img/profile__button-img.css);
 
 /*--- PERSON ---*/
 
@@ -24,6 +21,7 @@
 @import url(../blocks/person/__img/person__img.css);
 @import url(../blocks/person/__group/person__group.css);
 @import url(../blocks/person/__button/person__button.css);
+@import url(../blocks/person/__button-img/person__button-img.css);
 
 /*--- PAGE ---*/
 
@@ -45,3 +43,17 @@
 /*--- CONTAINER ---*/
 
 @import url(../blocks/container/container.css);
+
+/*--- CARDS ---*/
+
+@import url(../blocks/cards/cards.css);
+@import url(../blocks/cards/__list/cards__list.css);
+
+/*--- CARD ---*/
+
+@import url(../blocks/card/card.css);
+@import url(../blocks/card/__title/card__title.css);
+@import url(../blocks/card/__img/card__img.css);
+@import url(../blocks/card/__footer/card__footer.css);
+@import url(../blocks/card/__button/card__button.css);
+@import url(../blocks/card/__button-img/card__button-img.css);
