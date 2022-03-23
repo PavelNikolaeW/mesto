@@ -2,12 +2,25 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 1.22;
-  margin: 0px 0 0 20px;
+  text-align: center;
+  /* скрыть невлезающий текст */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 220px;
+}
+
+@media screen and (min-width: 425px) {
+  .person__subtext {
+    max-width: 350px;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .person__subtext {
     font-size: 18px;
     margin: 10px 0 0 0;
+    text-align: start;
+    max-width: 420px;
   }
 }

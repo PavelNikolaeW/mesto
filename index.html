@@ -20,31 +20,23 @@
           <div class="person__text">
             <div class="person__group">
               <h1 class="person__name">Жак-Ив Кусто</h1>
-              <button class="person__button">
-                <img
-                  src="./img/profile/pencil.svg"
-                  alt="карандаш"
-                  class="person__button-img"
-                />
-              </button>
+              <a href="#" class="person__button popup-link" id="edit">
+                <img src="./img/profile/pencil.svg" alt="карандаш" class="person__button-img" />
+              </a>
             </div>
             <p class="person__subtext">Исследователь океана</p>
           </div>
         </div>
-        <button class="profile__button">
-          <img
-            src="./img/profile/plus.svg"
-            alt="плюс"
-            class="profile__button-img"
-          />
-        </button>
+        <a href="#" class="profile__button">
+          <img src="./img/profile/plus.svg" alt="плюс" class="profile__button-img" />
+        </a>
       </section>
       <section class="cards">
         <ul class="cards__list">
           <li class="card">
             <img src="./img/photo/1.jpg" alt="фото" class="card__img" />
             <div class="card__footer">
-              <h2 class="card__title">Карачаевск</h2>
+              <h2 class="card__title">Карачаевск </h2>
               <button class="card__button">
                 <img
                   src="./img/photo/like.svg"
@@ -55,7 +47,7 @@
             </div>
           </li>
           <li class="card">
-            <img src="./img/photo/1.jpg" alt="фото" class="card__img" />
+            <img src="./img/photo/2.jpg" alt="фото" class="card__img" />
             <div class="card__footer">
               <h2 class="card__title">Карачаевск</h2>
               <button class="card__button">
@@ -68,7 +60,7 @@
             </div>
           </li>
           <li class="card">
-            <img src="./img/photo/1.jpg" alt="фото" class="card__img" />
+            <img src="./img/photo/3.jpg" alt="фото" class="card__img" />
             <div class="card__footer">
               <h2 class="card__title">Карачаевск</h2>
               <button class="card__button">
@@ -81,7 +73,7 @@
             </div>
           </li>
           <li class="card">
-            <img src="./img/photo/1.jpg" alt="фото" class="card__img" />
+            <img src="./img/photo/4.jpg" alt="фото" class="card__img" />
             <div class="card__footer">
               <h2 class="card__title">Карачаевск</h2>
               <button class="card__button">
@@ -94,7 +86,7 @@
             </div>
           </li>
           <li class="card">
-            <img src="./img/photo/1.jpg" alt="фото" class="card__img" />
+            <img src="./img/photo/5.jpg" alt="фото" class="card__img" />
             <div class="card__footer">
               <h2 class="card__title">Карачаевск</h2>
               <button class="card__button">
@@ -107,7 +99,7 @@
             </div>
           </li>
           <li class="card">
-            <img src="./img/photo/1.jpg" alt="фото" class="card__img" />
+            <img src="./img/photo/6.jpg" alt="фото" class="card__img" />
             <div class="card__footer">
               <h2 class="card__title">Карачаевск</h2>
               <button class="card__button">
@@ -124,10 +116,27 @@
     </main>
     <footer class="footer container">
       <div class="footer__body">
-        <h2 class="footer__copywriting">© 2020 Mesto Russia </h2>
+        <h2 class="footer__copywriting">© 2020 Mesto Russia</h2>
       </div>
     </footer>
-    <script src="main.js"></script>
+    <div class="popup" id="popup-edit">
+      <div class="popup__container">
+        <div class="popup__body">
+          <div class="popup__content">
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <form action="#" class="popup__form">
+              <input type="text" class="popup__input name" />
+              <input type="text" class="popup__input subtext" />
+              <button type="button" class="popup__submit">Сохранить</button>
+            </form>
+          </div>
+        </div>
+        <a href="#" class="popup__close close-popup">
+          <img src="./img/popup/close.svg" alt="крест" />
+        </a>
+      </div>
+    </div>
+    <script src="./js/popup.js"></script>
   </body>
 
 </html>

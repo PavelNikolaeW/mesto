@@ -1,0 +1,24 @@
+.popup__submit {
+  width: 238px;
+  height: 46px;
+  background-color: var(--popup-botton-bg);
+  color: var(--popup-bg);
+  border: none;
+  border-radius: 2px;
+}
+
+.popup__submit:hover {
+  cursor: pointer;
+}
+
+.popup__submit:active {
+  transform: scale(0.95);
+  transition: all .1s ease 0s;
+}
+
+@media screen and (min-width: 768px) {
+  .popup__submit {
+    width: 358px;
+    height: 50px;
+  }
+}

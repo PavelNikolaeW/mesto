@@ -1,8 +1,8 @@
 .person__button {
   line-height: 0;
   border: 1px solid var(--person-button);
-  background-color: var(--bg-page);
   padding: 5.2px 5.2px;
+  text-align: center;
 }
 
 @media screen and (min-width: 768px) {

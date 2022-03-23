@@ -6,4 +6,8 @@
   --person-button: #fff;
   --card-footer: #fff;
   --footer-cprt: rgba(84, 84, 84, 1);
+  --popup-bg: #fff;
+  --popup-color: #000;
+  --popup-border: rgba(0, 0, 0, 0.2);
+  --popup-botton-bg: #000;
 }
