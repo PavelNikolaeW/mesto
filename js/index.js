@@ -5,3 +5,4 @@ function include(url) {
 }
 
 include("./js/popup.js");
+include("./js/like.js");
