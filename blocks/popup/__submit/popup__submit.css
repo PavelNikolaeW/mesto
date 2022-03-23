@@ -5,10 +5,12 @@
   color: var(--popup-bg);
   border: none;
   border-radius: 2px;
+  transition: opacity .8s ease 0s;
 }
 
 .popup__submit:hover {
   cursor: pointer;
+  opacity: 0.8;
 }
 
 .popup__submit:active {

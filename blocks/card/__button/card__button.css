@@ -2,4 +2,9 @@
   border: none;
   background-color: var(--card-footer);
   padding: 5px;
+  transition: opacity .8s ease 0s;
+}
+
+.card__button:hover {
+  opacity: 0.4;
 }

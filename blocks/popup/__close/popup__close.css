@@ -2,7 +2,11 @@
   position: absolute;
   top: -50px;
   right: 20px;
-  background-color: ;
+  transition: opacity .8s ease 0s;
+}
+
+.popup__close:hover {
+  opacity: 0.8;
 }
 
 @media screen and (min-width: 425px) {

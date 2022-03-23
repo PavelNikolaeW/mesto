@@ -5,6 +5,11 @@
   padding: 12px 64px 10px 60px;
   margin-top: 38px;
   text-align: center;
+  transition: opacity .8s ease 0s;
+}
+
+.profile__button:hover {
+  opacity: 0.4;
 }
 
 @media screen and (min-width: 768px) {
