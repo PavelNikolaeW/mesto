@@ -4,10 +4,12 @@
   padding: 5.2px 5.2px;
   text-align: center;
   transition: opacity .8s ease 0s;
+  background-color: rgba(255, 255, 255, 0);
 }
 
 .person__button:hover {
-  opacity: 0.4;
+  cursor: pointer;
+  opacity: 0.6;
 }
 
 @media screen and (min-width: 768px) {

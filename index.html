@@ -11,35 +11,35 @@
 
   <body class="page">
     <header class="header container">
-      <img src="./img/header/logo.svg" alt="МЕСТО росся" class="header__logo" />
+      <img src="./images/header/logo.svg" alt="МЕСТО росся" class="header__logo" />
     </header>
     <main class="main container">
       <section class="profile">
         <div class="profile__person person">
-          <img src="./img/profile/kusto.jpg" alt="Жак-Ив Кусто" class="person__img" />
+          <img src="./images/profile/kusto.jpg" alt="Жак-Ив Кусто" class="person__img" />
           <div class="person__text">
             <div class="person__group">
               <h1 class="person__name">Жак-Ив Кусто</h1>
-              <a href="#" class="person__button popup-link" id="edit">
-                <img src="./img/profile/pencil.svg" alt="карандаш" class="person__button-img" />
-              </a>
+              <button type="button" class="person__button popup-link" id="edit">
+                <img src="./images/profile/pencil.svg" alt="карандаш" class="person__button-img" />
+              </button>
             </div>
             <p class="person__subtext">Исследователь океана</p>
           </div>
         </div>
-        <a href="#" class="profile__button">
-          <img src="./img/profile/plus.svg" alt="плюс" class="profile__button-img" />
-        </a>
+        <button type="button" class="profile__button">
+          <img src="./images/profile/plus.svg" alt="плюс" class="profile__button-img" />
+        </button>
       </section>
       <section class="cards">
         <ul class="cards__list">
           <li class="card">
-            <img src="./img/photo/1.jpg" alt="фото" class="card__img" />
+            <img src="./images/photo/1.jpg" alt="фото" class="card__img" />
             <div class="card__footer">
               <h2 class="card__title">Карачаевск </h2>
-              <button class="card__button">
+              <button type="button" class="card__button">
                 <img
-                  src="./img/photo/like.svg"
+                  src="./images/photo/like.svg"
                   alt="лайк"
                   class="card__button-img"
                 />
@@ -47,12 +47,12 @@
             </div>
           </li>
           <li class="card">
-            <img src="./img/photo/2.jpg" alt="фото" class="card__img" />
+            <img src="./images/photo/2.jpg" alt="фото" class="card__img" />
             <div class="card__footer">
               <h2 class="card__title">Карачаевск</h2>
               <button class="card__button">
                 <img
-                  src="./img/photo/like.svg"
+                  src="./images/photo/like.svg"
                   alt="лайк"
                   class="card__button-img"
                 />
@@ -60,12 +60,12 @@
             </div>
           </li>
           <li class="card">
-            <img src="./img/photo/3.jpg" alt="фото" class="card__img" />
+            <img src="./images/photo/3.jpg" alt="фото" class="card__img" />
             <div class="card__footer">
               <h2 class="card__title">Карачаевск</h2>
               <button class="card__button">
                 <img
-                  src="./img/photo/like.svg"
+                  src="./images/photo/like.svg"
                   alt="лайк"
                   class="card__button-img"
                 />
@@ -73,12 +73,12 @@
             </div>
           </li>
           <li class="card">
-            <img src="./img/photo/4.jpg" alt="фото" class="card__img" />
+            <img src="./images/photo/4.jpg" alt="фото" class="card__img" />
             <div class="card__footer">
               <h2 class="card__title">Карачаевск</h2>
               <button class="card__button">
                 <img
-                  src="./img/photo/like.svg"
+                  src="./images/photo/like.svg"
                   alt="лайк"
                   class="card__button-img"
                 />
@@ -86,12 +86,12 @@
             </div>
           </li>
           <li class="card">
-            <img src="./img/photo/5.jpg" alt="фото" class="card__img" />
+            <img src="./images/photo/5.jpg" alt="фото" class="card__img" />
             <div class="card__footer">
               <h2 class="card__title">Карачаевск</h2>
               <button class="card__button">
                 <img
-                  src="./img/photo/like.svg"
+                  src="./images/photo/like.svg"
                   alt="лайк"
                   class="card__button-img"
                 />
@@ -99,12 +99,12 @@
             </div>
           </li>
           <li class="card">
-            <img src="./img/photo/6.jpg" alt="фото" class="card__img" />
+            <img src="./images/photo/6.jpg" alt="фото" class="card__img" />
             <div class="card__footer">
               <h2 class="card__title">Карачаевск</h2>
               <button class="card__button">
                 <img
-                  src="./img/photo/like.svg"
+                  src="./images/photo/like.svg"
                   alt="лайк"
                   class="card__button-img"
                 />
@@ -115,25 +115,20 @@
       </section>
     </main>
     <footer class="footer container">
-      <div class="footer__body">
-        <h2 class="footer__copywriting">© 2020 Mesto Russia</h2>
-      </div>
+      <p class="footer__copywriting">© 2020 Mesto Russia</p>
     </footer>
-    <div class="popup" id="popup-edit">
+    <div class="popup " id="popup-edit">
       <div class="popup__container">
         <div class="popup__body">
-          <div class="popup__content">
-            <h2 class="popup__title">Редактировать профиль</h2>
-            <form action="#" class="popup__form">
-              <input type="text" class="popup__input name" />
-              <input type="text" class="popup__input subtext" />
-              <button type="submit" class="popup__submit">Сохранить</button>
-            </form>
-          </div>
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <form action="#" name="edit__form" class="popup__form">
+            <input type="text" class="popup__input popup__input_name" />
+            <input type="text" class="popup__input popup__input_subtext" />
+            <button type="submit" class="popup__submit">Сохранить</button>
+          </form>
         </div>
-        <a href="#" class="popup__close close-popup">
-          <img src="./img/popup/close.svg" alt="крест" />
-        </a>
+        <button class="popup__close close-popup">
+        </button>
       </div>
     </div>
     <script src="./js/index.js"></script>
