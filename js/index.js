@@ -5,16 +5,14 @@ function formSubmitHandler(evt) {
     openClosePopup(evt);
 }
 
-function openClosePopup(evt) {
-    console.log(popup);
+function togglePopup(evt) {
     evt.preventDefault();
     popup.classList.toggle('popup_opened');
 }
 
-
 let formElement = document.querySelector('.popup__form');
-let nameInput = formElement.querySelector('.popup__input_name');
-let subTextInput = formElement.querySelector('.popup__input_subtext');
+let nameInput = formElement.querySelector('.popup__input_type_name');
+let subTextInput = formElement.querySelector('.popup__input_type_subtext');
 
 let nameProfile = document.querySelector('.person__name');
 let subTextProfile = document.querySelector('.person__subtext');
@@ -27,6 +25,6 @@ let popup = document.querySelector('.popup');
 let closePopup = popup.querySelector('.popup__close');
 
 
-personButton.addEventListener('click', openClosePopup);
-closePopup.addEventListener('click', openClosePopup);
+personButton.addEventListener('click', togglePopup);
+closePopup.addEventListener('click', togglePopup);
 formElement.addEventListener('submit', formSubmitHandler);
