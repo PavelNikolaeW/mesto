@@ -2,7 +2,7 @@ function formSubmitHandler(evt) {
     evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
     nameProfile.textContent = nameInput.value;
     subTextProfile.textContent = subTextInput.value;
-    openClosePopup(evt);
+    togglePopup(evt);
 }
 
 function togglePopup(evt) {
