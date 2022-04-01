@@ -8,13 +8,6 @@ function formSubmitHandler(evt) {
 function togglePopup(evt) {
     evt.preventDefault();
 
-    // делаем максимально тупое, ненужное присвоение, ведь все и так работает
-    if (!popup.classList.contains("popup_opened")) {
-        nameInput.value = nameProfile.innerText;
-        subTextInput.value = subTextProfile.innerText;
-    }
-    // конец максимально тупого присвоения, оно тут ненужно
-
     popup.classList.toggle('popup_opened');
 }
 
