@@ -91,11 +91,6 @@ function closePopup(evt) {
     popup.classList.remove('popup_opened')
 }
 
-const popupCloses = document.querySelectorAll('.close-popup');
-for (const button of popupCloses) {
-    button.addEventListener('click', closePopup)
-}
-
 // submit 
 const submitManager = {
     addForm(evt) {
