@@ -5,7 +5,3 @@
   max-height: 100%;
   position: relative;
 }
-
-.card:hover {
-  cursor: pointer;
-}

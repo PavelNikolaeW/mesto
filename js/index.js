@@ -44,12 +44,13 @@ function createCard(cardData) {
     cardImg.alt = cardData.name;
     cardTitle.innerText = cardData.name;
     cardList.prepend(cardElement);
-    createCardPopup(cardData, cardPopup, cardElement);
+    createCardPopup(cardData, cardPopup, cardElement.querySelector('.card__img'));
 }
 
 function createCardPopup(cardData, cardPopup, cardElement) {
     const popupImg = cardPopup.querySelector('.popup__img');
     const popupCaption = cardPopup.querySelector('.popup__caption');
+    const popupClose = cardPopup.querySelector('.close-popup');
 
     popupImg.src = cardData.link;
     popupImg.alt = cardData.name;
@@ -59,6 +60,7 @@ function createCardPopup(cardData, cardPopup, cardElement) {
         cardPopup.classList.toggle('popup_opened');
         cardPopup.style.background = 'rgba(0, 0, 0, 0.9)';
     })
+    popupClose.addEventListener('click', closePopup)
 }
 
 for (const card of initialCards) {
@@ -84,12 +86,14 @@ for (const button of popupButtons) {
 }
 
 // close popups
+function closePopup(evt) {
+    const popup = evt.target.closest('.popup');
+    popup.classList.remove('popup_opened')
+}
+
 const popupCloses = document.querySelectorAll('.close-popup');
 for (const button of popupCloses) {
-    button.addEventListener('click', () => {
-        const popup = button.closest('.popup');
-        popup.classList.remove('popup_opened')
-    })
+    button.addEventListener('click', closePopup)
 }
 
 // submit 
