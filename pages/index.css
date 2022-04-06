@@ -1,4 +1,3 @@
-
 /*--- NO BEM BLOCKS ---*/
 
 @import url(../vendor/normalize.css);
@@ -15,15 +14,22 @@
 /*--- POPUP ---*/
 
 @import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/_opened/popup_opened_card.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__submit/popup__submit.css);
 @import url(../blocks/popup/__input/popup__input.css);
+@import url(../blocks/popup/__input/_type/popup__input_type_title.css);
 @import url(../blocks/popup/__input/_type/popup__input_type_subtext.css);
 @import url(../blocks/popup/__input/_type/popup__input_type_name.css);
+@import url(../blocks/popup/__input/_type/popup__input_type_link.css);
+@import url(../blocks/popup/__img/popup__img.css);
 @import url(../blocks/popup/__form/popup__form.css);
+@import url(../blocks/popup/__figure/popup__figure.css);
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__close/popup__close.css);
+@import url(../blocks/popup/__card-container/popup__card-container.css);
+@import url(../blocks/popup/__caption/popup__caption.css);
 @import url(../blocks/popup/__body/popup__body.css);
 
 /*--- POPUP-LINK ---*/
@@ -75,8 +81,8 @@
 /*--- CARD ---*/
 
 @import url(../blocks/card/card.css);
+@import url(../blocks/card/__urn/card__urn.css);
 @import url(../blocks/card/__title/card__title.css);
 @import url(../blocks/card/__img/card__img.css);
 @import url(../blocks/card/__footer/card__footer.css);
 @import url(../blocks/card/__button/card__button.css);
-@import url(../blocks/card/__button-img/card__button-img.css);

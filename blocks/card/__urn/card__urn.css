@@ -1,0 +1,16 @@
+.card__urn {
+  background-image: url(../../../images/photo/urn.svg);
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  width: 18px;
+  height: 19px;
+  top: 20px;
+  right: 20px;
+  transition: opacity .8s ease 0s;
+}
+
+.card__urn:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
