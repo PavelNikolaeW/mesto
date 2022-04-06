@@ -33,11 +33,17 @@ function createCard(cardData) {
     const cardPopup = template.querySelector('.popup').cloneNode(true);
     const cardImg = cardElement.querySelector('.card__img');
     const cardTitle = cardElement.querySelector('.card__title');
+    const cardLike = cardElement.querySelector('.card__button');
     const cardRemove = cardElement.querySelector('.card__urn');
 
     cardRemove.addEventListener('click', () => {
         cardRemove.parentElement.remove();
         cardPopup.remove();
+    })
+
+    cardLike.addEventListener('click', () => {
+        console.log('kek');
+        cardLike.classList.toggle('card__button_type_active');
     })
 
     cardImg.src = cardData.link;
@@ -120,12 +126,4 @@ const popupForms = document.querySelectorAll('.popup__form');
 for (const form of popupForms) {
     const funcName = form.getAttribute('name');
     form.addEventListener('submit', submitManager[funcName]);
-}
-
-// like
-const likeButtons = document.querySelectorAll('.card__button');
-for (const like of likeButtons) {
-    like.addEventListener('click', () => {
-        like.classList.toggle('card__button_type_active');
-    })
 }
