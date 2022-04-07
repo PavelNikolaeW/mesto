@@ -1,3 +1,11 @@
+const PopupCloses = document.querySelectorAll('.popup__close')
+for (const item of PopupCloses) {
+    item.addEventListener('click', () => {
+        const popup = item.closest('.popup');
+        popup.classList.remove('popup_opened');
+    })
+}
+
 // put content
 const template = document.querySelector('#template-card').content;
 const cardList = document.querySelector('.cards__list');
@@ -10,11 +18,9 @@ function openCardPopup(cardImg) {
 
     popupImg.src = cardImg.src;
     popupImg.alt = cardImg.alt;
-    popupCaption.innerText = cardImg.alt;
+    popupCaption.textContent = cardImg.alt;
 
     popupCard.classList.add('popup_opened');
-    popupCard.style.background = 'rgba(0, 0, 0, 0.9)';
-
     popupClose.addEventListener('click', () => {
         popupCard.classList.remove('popup_opened');
     })
@@ -41,7 +47,7 @@ function createCard(cardData) {
 
     cardImg.src = cardData.link;
     cardImg.alt = cardData.name;
-    cardTitle.innerText = cardData.name;
+    cardTitle.textContent = cardData.name;
 
     return cardElement;
 }
@@ -56,8 +62,8 @@ const subTextInput = document.querySelector('.popup__input_type_subtext');
 const nameProfile = document.querySelector('.person__name');
 const subTextProfile = document.querySelector('.person__subtext');
 
-nameInput.value = nameProfile.innerText;
-subTextInput.value = subTextProfile.innerText;
+nameInput.value = nameProfile.textContent;
+subTextInput.value = subTextProfile.textContent;
 
 const popupButtons = document.querySelectorAll('.popup-link');
 for (const button of popupButtons) {

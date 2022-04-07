@@ -14,8 +14,9 @@
 /*--- POPUP ---*/
 
 @import url(../blocks/popup/popup.css);
-@import url(../blocks/popup/_opened/popup_opened_card.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
+@import url(../blocks/popup/_opened/popup_opened_card.css);
+@import url(../blocks/popup/_card/popup_card.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__submit/popup__submit.css);
 @import url(../blocks/popup/__input/popup__input.css);
@@ -68,10 +69,6 @@
 /*--- CONTAINER ---*/
 
 @import url(../blocks/container/container.css);
-
-/*--- CLOSE-POPUP ---*/
-
-@import url(../blocks/close-popup/close-popup.css);
 
 /*--- CARDS ---*/
 
