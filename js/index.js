@@ -1,20 +1,11 @@
-const PopupCloses = document.querySelectorAll('.popup__close')
-for (const item of PopupCloses) {
-    item.addEventListener('click', () => {
-        const popup = item.closest('.popup');
-        popup.classList.remove('popup_opened');
-    })
-}
-
 // put content
 const template = document.querySelector('#template-card').content;
 const cardList = document.querySelector('.cards__list');
 const popupCard = document.querySelector('.popup_card');
+const popupImg = popupCard.querySelector('.popup__img');
+const popupCaption = popupCard.querySelector('.popup__caption');
 
 function openCardPopup(cardImg) {
-    const popupImg = popupCard.querySelector('.popup__img');
-    const popupCaption = popupCard.querySelector('.popup__caption');
-
     popupImg.src = cardImg.src;
     popupImg.alt = cardImg.alt;
     popupCaption.textContent = cardImg.alt;
@@ -66,6 +57,15 @@ for (const button of popupButtons) {
         const popupId = '#popup-' + button.getAttribute('id');
         const popup = document.querySelector(popupId);
         popup.classList.add('popup_opened');
+    })
+}
+
+// close popups
+const PopupCloses = document.querySelectorAll('.popup__close')
+for (const item of PopupCloses) {
+    item.addEventListener('click', () => {
+        const popup = item.closest('.popup');
+        popup.classList.remove('popup_opened');
     })
 }
 
