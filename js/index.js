@@ -14,16 +14,11 @@ const popupCard = document.querySelector('.popup_card');
 function openCardPopup(cardImg) {
     const popupImg = popupCard.querySelector('.popup__img');
     const popupCaption = popupCard.querySelector('.popup__caption');
-    const popupClose = popupCard.querySelector('.popup__close');
 
     popupImg.src = cardImg.src;
     popupImg.alt = cardImg.alt;
     popupCaption.textContent = cardImg.alt;
-
     popupCard.classList.add('popup_opened');
-    popupClose.addEventListener('click', () => {
-        popupCard.classList.remove('popup_opened');
-    })
 }
 
 function createCard(cardData) {
