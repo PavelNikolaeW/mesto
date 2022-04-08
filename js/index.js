@@ -56,10 +56,9 @@ const subTextInput = document.querySelector('.popup__input_type_subtext');
 const nameProfile = document.querySelector('.person__name');
 const subTextProfile = document.querySelector('.person__subtext');
 
-function openPropfilePopup() {
-    nameInput.value = nameProfile.textContent;
-    subTextInput.value = subTextProfile.textContent;
-}
+nameInput.value = nameProfile.textContent;
+subTextInput.value = subTextProfile.textContent;
+
 
 openPropfilePopup();
 
@@ -74,14 +73,19 @@ openPropfilePopup();
 // }
 // сделаю все в ручную, а то в друг я запутаюсь, я же программист 
 
+function openPropfilePopup() {
+    // добавим бесполезный участок когда сюда, вдруг я сойду с ума и изменю еще каким то другим способом имя и подпись
+    nameInput.value = nameProfile.textContent;
+    subTextInput.value = subTextProfile.textContent;
+    // конец бесполезного участка кода, он тут не нужен, зато это хорошая практика
+    openPopup(popupEdit)
+}
+
 const buttonEdit = document.querySelector('#edit');
 const popupEdit = document.querySelector('#popup-edit');
 
 buttonEdit.addEventListener('click', () => {
-    // добавим бесполезный участок когда, вдруг я сойду с ума и изменю еще каким то другим способом имя и подпись
     openPropfilePopup();
-    // конец бесполезного участка кода, зато это хорошая практика
-    openPopup(popupEdit);
 })
 
 const buttonAdd = document.querySelector('#add');
