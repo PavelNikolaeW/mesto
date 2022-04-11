@@ -56,21 +56,22 @@ const subTextInput = document.querySelector('.popup__input_type_subtext');
 const nameProfile = document.querySelector('.person__name');
 const subTextProfile = document.querySelector('.person__subtext');
 
-nameInput.value = nameProfile.textContent;
-subTextInput.value = subTextProfile.textContent;
-
+const buttonEdit = document.querySelector('#edit');
+const popupEdit = document.querySelector('#popup-edit');
+const buttonAdd = document.querySelector('#add');
+const popupAdd = document.querySelector('#popup-add');
 
 openPropfilePopup();
 
 // слишком сложный участок кода
-// const popupButtons = document.querySelectorAll('.popup-link');
-// for (const button of popupButtons) {
-//     button.addEventListener('click', () => {
-//         const popupId = '#popup-' + button.getAttribute('id');
-//         const popup = document.querySelector(popupId);
-//         openPopup(popup)
-//     })
-// }
+const popupButtons = document.querySelectorAll('.popup-link');
+for (const button of popupButtons) {
+    button.addEventListener('click', () => {
+        const popupId = '#popup-' + button.getAttribute('id');
+        const popup = document.querySelector(popupId);
+        openPopup(popup)
+    })
+}
 // сделаю все в ручную, а то в друг я запутаюсь, я же программист 
 
 function openPropfilePopup() {
@@ -81,15 +82,11 @@ function openPropfilePopup() {
     openPopup(popupEdit)
 }
 
-const buttonEdit = document.querySelector('#edit');
-const popupEdit = document.querySelector('#popup-edit');
 
 buttonEdit.addEventListener('click', () => {
     openPropfilePopup();
 })
 
-const buttonAdd = document.querySelector('#add');
-const popupAdd = document.querySelector('#popup-add');
 
 buttonAdd.addEventListener('click', () => {
         openPopup(popupAdd);
