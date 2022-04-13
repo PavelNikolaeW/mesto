@@ -61,8 +61,6 @@ const popupEdit = document.querySelector('#popup-edit');
 const buttonAdd = document.querySelector('#add');
 const popupAdd = document.querySelector('#popup-add');
 
-openPropfilePopup();
-
 // слишком сложный участок кода
 const popupButtons = document.querySelectorAll('.popup-link');
 for (const button of popupButtons) {
