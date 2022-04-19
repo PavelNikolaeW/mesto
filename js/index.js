@@ -1,23 +1,8 @@
-// put content
-const template = document.querySelector('#template-card').content;
-const cardsContainer = document.querySelector('.cards__list');
-const popupCard = document.querySelector('.popup_card');
-const popupImg = popupCard.querySelector('.popup__img');
-const popupCaption = popupCard.querySelector('.popup__caption');
-
-function openPopup(popup) {
-    popup.classList.add('popup_opened');
-}
-
-function closePopup(popup) {
-    popup.classList.remove('popup_opened');
-}
-
 function openCardPopup(cardImg) {
     popupImg.src = cardImg.src;
     popupImg.alt = cardImg.alt;
     popupCaption.textContent = cardImg.alt;
-    openPopup(popupCard);
+    popupCard.classList.add('popup_opened');
 }
 
 function createCard(cardData) {
@@ -45,122 +30,72 @@ function createCard(cardData) {
 
     return cardElement;
 }
-
-for (const card of initialCards) {
-    cardsContainer.prepend(createCard(card));
-}
-
-// open popups
+const template = document.querySelector('#template-card').content;
+const cardList = document.querySelector('.cards__list');
+const popupCard = document.querySelector('.popup_card');
+const popupImg = popupCard.querySelector('.popup__img');
+const popupCaption = popupCard.querySelector('.popup__caption');
 const nameInput = document.querySelector('.popup__input_type_name');
 const subTextInput = document.querySelector('.popup__input_type_subtext');
 const nameProfile = document.querySelector('.person__name');
 const subTextProfile = document.querySelector('.person__subtext');
-
-const buttonEdit = document.querySelector('#edit');
-const popupEdit = document.querySelector('#popup-edit');
-const buttonAdd = document.querySelector('#add');
-const popupAdd = document.querySelector('#popup-add');
-
-// слишком сложный участок кода
+const popupForms = document.querySelectorAll('.popup__form');
 const popupButtons = document.querySelectorAll('.popup-link');
-for (const button of popupButtons) {
-    button.addEventListener('click', () => {
-        const popupId = '#popup-' + button.getAttribute('id');
-        const popup = document.querySelector(popupId);
-        openPopup(popup)
-    })
-}
-// сделаю все в ручную, а то в друг я запутаюсь, я же программист 
-
-function openPropfilePopup() {
-    // добавим бесполезный участок когда сюда, вдруг я сойду с ума и изменю еще каким то другим способом имя и подпись
-    nameInput.value = nameProfile.textContent;
-    subTextInput.value = subTextProfile.textContent;
-    // конец бесполезного участка кода, он тут не нужен, зато это хорошая практика
-    openPopup(popupEdit)
-}
-
-
-buttonEdit.addEventListener('click', () => {
-    openPropfilePopup();
-})
-
-
-buttonAdd.addEventListener('click', () => {
-        openPopup(popupAdd);
-    })
-    // теперь хорошо 
-
-
-// close popups
 const PopupCloses = document.querySelectorAll('.popup__close')
-for (const item of PopupCloses) {
-    item.addEventListener('click', () => {
-        const popup = item.closest('.popup');
-        closePopup(popup)
-    })
-}
-
-// submit 
 const inputTitle = document.querySelector('.popup__input_type_title');
 const inputLink = document.querySelector('.popup__input_type_link');
+const submitManager = {
+    addForm(evt) {
+        const popup = evt.target.closest('.popup');
+        const card = {
+            name: inputTitle.value,
+            link: inputLink.value,
+        }
 
-// болит голова когда смотрю на это, заменю ка я все на функции, что бы
-// установить каждый обработчик для каждой формы по отдельности
-// const submitManager = {
-//     addForm(evt) {
-//         const popup = evt.target.closest('.popup');
-//         const card = {
-//             name: inputTitle.value,
-//             link: inputLink.value,
-//         }
+        cardList.prepend(createCard(card));
+        popup.classList.remove('popup_opened');
+        evt.target.reset();
+        evt.preventDefault();
+    },
+    editForm(evt) {
+        const popup = evt.target.closest('.popup');
+        nameProfile.textContent = nameInput.value;
+        subTextProfile.textContent = subTextInput.value;
 
-//         cardsContainer.prepend(createCard(card));
-//         closePopup(popup);
-//         evt.target.reset();
-//         evt.preventDefault();
-//     },
-//     editForm(evt) {
-//         const popup = evt.target.closest('.popup');
+        popup.classList.remove('popup_opened');
+        evt.preventDefault();
+    },
+}
 
-//         nameProfile.textContent = nameInput.value;
-//         subTextProfile.textContent = subTextInput.value;
-//         closePopup(popup);
-//         evt.preventDefault();
-//     },
-// }
+function main() {
+    for (const card of initialCards) {
+        cardList.prepend(createCard(card));
+    }
+    nameInput.value = nameProfile.textContent;
+    subTextInput.value = subTextProfile.textContent;
 
-// const popupForms = document.querySelectorAll('.popup__form');
-// for (const form of popupForms) {
-//     const funcName = form.getAttribute('name');
-//     form.addEventListener('submit', submitManager[funcName]);
-// }
-
-
-function addForm(evt) {
-    const popup = evt.target.closest('.popup');
-    const card = {
-        name: inputTitle.value,
-        link: inputLink.value,
+    // open popup
+    for (const button of popupButtons) {
+        button.addEventListener('click', () => {
+            const popupId = '#popup-' + button.getAttribute('id');
+            const popup = document.querySelector(popupId);
+            popup.classList.add('popup_opened');
+        })
     }
 
-    cardsContainer.prepend(createCard(card));
-    closePopup(popup);
-    evt.target.reset();
-    evt.preventDefault();
+    // close popups
+    for (const item of PopupCloses) {
+        item.addEventListener('click', () => {
+            const popup = item.closest('.popup');
+            popup.classList.remove('popup_opened');
+        })
+    }
+
+    // submit 
+    for (const form of popupForms) {
+        const funcName = form.getAttribute('name');
+        form.addEventListener('submit', submitManager[funcName]);
+    }
 }
 
-function editForm(evt) {
-    const popup = evt.target.closest('.popup');
-
-    nameProfile.textContent = nameInput.value;
-    subTextProfile.textContent = subTextInput.value;
-    closePopup(popup);
-    evt.preventDefault();
-}
-
-const formAdd = document.querySelector('.popup__form[name=addForm]');
-formAdd.addEventListener('submit', addForm);
-
-const formEdit = document.querySelector('.popup__form[name=editForm]');
-formEdit.addEventListener('submit', editForm);
+main();
