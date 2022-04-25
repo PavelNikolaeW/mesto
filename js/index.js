@@ -109,7 +109,7 @@ function main() {
         bntSelector: '.popup__submit',
         btnDisabledClass: 'popup__submit_type_disabled',
         errorElementSelector: '.popup__input-error',
-        inputErorClass: 'form__input_type_error',
+        inputErrorClass: 'form__input_type_error',
     })
 }
 

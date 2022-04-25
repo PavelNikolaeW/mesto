@@ -17,13 +17,13 @@ function toggleDisabledButton(formElemCollection, btn, cfg) {
 function showInputError(inputElement, cfg) {
     const errorElement = inputElement.parentNode.querySelector(cfg.errorElementSelector)
     errorElement.textContent = inputElement.validationMessage
-    inputElement.classList.add(cfg.inputErorClass);
+    inputElement.classList.add(cfg.inputErrorClass);
 }
 
 function hideInputError(inputElement, cfg) {
     const errorElement = inputElement.parentNode.querySelector(cfg.errorElementSelector)
     errorElement.textContent = ''
-    inputElement.classList.remove(cfg.inputErorClass);
+    inputElement.classList.remove(cfg.inputErrorClass);
 }
 
 function checkInputValidity(inputElement, cfg) {
