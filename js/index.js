@@ -39,6 +39,11 @@ function closePopup(evt) {
         popup.classList.remove('popup_opened');
         body.removeEventListener('click', closePopup);
     }
+    if (evt.key === 'Escape') {
+        const popup = document.querySelector('.popup_opened')
+        popup.classList.remove('popup_opened');
+        body.removeEventListener('click', closePopup);
+    }
 }
 
 const body = document.querySelector('body');
@@ -63,19 +68,15 @@ const submitManager = {
             name: inputTitle.value,
             link: inputLink.value,
         }
-
         cardList.prepend(createCard(card));
         popup.classList.remove('popup_opened');
         evt.target.reset();
-        evt.preventDefault();
     },
     editForm(evt) {
         const popup = evt.target.closest('.popup');
         nameProfile.textContent = nameInput.value;
         subTextProfile.textContent = subTextInput.value;
-
         popup.classList.remove('popup_opened');
-        evt.preventDefault();
     },
 }
 
@@ -92,7 +93,8 @@ function main() {
             const popupId = '#popup-' + button.id;
             const popup = document.querySelector(popupId);
             popup.classList.add('popup_opened');
-            body.addEventListener('click', closePopup)
+            popup.addEventListener('click', closePopup)
+            body.addEventListener('keyup', closePopup)
         })
     }
 
@@ -101,6 +103,14 @@ function main() {
         const funcName = form.getAttribute('name');
         form.addEventListener('submit', submitManager[funcName]);
     }
+
+    enableValidation({
+        formCollection: document.forms,
+        bntSelector: '.popup__submit',
+        btnDisabledClass: 'popup__submit_type_disabled',
+        errorElementSelector: '.popup__input-error',
+        inputErorClass: 'form__input_type_error',
+    })
 }
 
 main();

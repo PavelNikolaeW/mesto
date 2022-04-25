@@ -7,10 +7,6 @@
   border-bottom: 1px solid var(--popup-border);
 }
 
-.popup__input:active {
-  border: none;
-}
-
 @media screen and (min-width: 598px) {
   .popup__input {
     padding: 11px 0 10px 0;

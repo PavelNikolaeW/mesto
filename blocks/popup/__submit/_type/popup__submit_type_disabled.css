@@ -1,0 +1,5 @@
+.popup__submit_type_disabled {
+  background-color: transparent;
+  color: var(--popup-border);
+  border: 1px solid var(--popup-border);
+}
