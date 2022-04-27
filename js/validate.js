@@ -5,7 +5,6 @@ function hasInvalidInput(formElemCollection) {
 }
 
 function toggleDisabledButton(formElemCollection, btn, cfg) {
-
     if (!hasInvalidInput(formElemCollection)) {
         btn.classList.remove(cfg.btnDisabledClass);
         btn.removeAttribute("disabled");
@@ -36,6 +35,7 @@ function checkInputValidity(inputElement, cfg) {
 }
 
 function setEventListeners(inputElement, btn, formElemCollection, cfg) {
+    toggleDisabledButton(formElemCollection, btn, cfg);
     inputElement.addEventListener('input', (evt) => {
         checkInputValidity(inputElement, cfg);
         toggleDisabledButton(formElemCollection, btn, cfg);
