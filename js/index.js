@@ -16,6 +16,7 @@ const inputTitle = document.querySelector('.popup__input_type_title');
 const inputLink = document.querySelector('.popup__input_type_link');
 const editFormElem = document.querySelector('[name="editForm"]')
 const addFormElem = document.querySelector('[name="addForm"]')
+const btnSubmitAddForm = addFormElem.querySelector('.popup__submit')
 const ESC_CODE = 'Escape'
 
 function createCard(cardData) {
@@ -75,25 +76,21 @@ function closeByOverlayClick(evt) {
 }
 
 function addForm(evt) {
-    const form = evt.target;
-    const popup = form.closest('.popup');
-    const btn = form.querySelector('.popup__submit')
     const card = {
         name: inputTitle.value,
         link: inputLink.value,
     }
     cardList.prepend(createCard(card));
-    closePopup(popup)
-    btn.setAttribute("disabled", "disabled");
-    btn.classList.add('popup__submit_type_disabled');
-    form.reset()
+    closePopup(popupAdd)
+    btnSubmitAddForm.setAttribute("disabled", "disabled");
+    btnSubmitAddForm.classList.add('popup__submit_type_disabled');
+    addFormElem.reset()
 }
 
 function editForm(evt) {
-    const popup = evt.target.closest('.popup');
     nameProfile.textContent = nameInput.value;
     subTextProfile.textContent = subTextInput.value;
-    closePopup(popup)
+    closePopup(popupEdit)
 }
 
 function main() {
