@@ -3,7 +3,8 @@ const subTextInput = document.querySelector('.popup__input_type_subtext');
 const nameProfile = document.querySelector('.person__name');
 const subTextProfile = document.querySelector('.person__subtext');
 const popupCard = document.querySelector('.popup_card');
-
+const popupImg = popupCard.querySelector('.popup__img');
+const popupCaption = popupCard.querySelector('.popup__caption');
 const ESC_CODE = 'Escape'
 
 function closePopup(popup) {
@@ -47,5 +48,6 @@ export {
     closePopup,
     openPopup,
     openPopupProfile,
-
+    popupImg,
+    popupCaption
 }

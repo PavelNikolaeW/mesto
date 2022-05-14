@@ -1,4 +1,4 @@
-import { popupCard, openPopup } from './utils.js';
+import { popupCard, popupImg, popupCaption, openPopup } from './utils.js';
 
 export default class Card {
     constructor(data, selector) {
@@ -6,6 +6,8 @@ export default class Card {
         this._link = data.link;
         this._cardElement = this._getCardElement(selector);
         this._cardImg = this._cardElement.querySelector('.card__img');
+        this.cardRemove = this._cardElement.querySelector('.card__urn');
+        this.cardLike = this._cardElement.querySelector('.card__button');
         this._createCard()
     }
 
@@ -17,10 +19,7 @@ export default class Card {
             .cloneNode(true);
     }
 
-    _handlePopup() {
-        const popupImg = popupCard.querySelector('.popup__img');
-        const popupCaption = popupCard.querySelector('.popup__caption');
-
+    _handleCardClick() {
         this._cardImg.addEventListener('click', () => {
             openPopup(popupCard);
             popupImg.src = this._cardImg.src;
@@ -30,14 +29,12 @@ export default class Card {
     }
 
     _handleRemove() {
-        const cardRemove = this._cardElement.querySelector('.card__urn');
-        cardRemove.addEventListener('click', () => {
+        this.cardRemove.addEventListener('click', () => {
             cardRemove.closest('.card').remove();
         })
     }
 
     _handleLiked() {
-        const cardLike = this._cardElement.querySelector('.card__button');
         cardLike.addEventListener('click', () => {
             cardLike.classList.toggle('card__button_type_active');
         })
@@ -46,7 +43,7 @@ export default class Card {
     _setEventListeners() {
         this._handleRemove();
         this._handleLiked();
-        this._handlePopup();
+        this._handleCardClick();
     }
 
     _createCard() {
