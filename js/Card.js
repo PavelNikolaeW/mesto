@@ -6,8 +6,8 @@ export default class Card {
         this._link = data.link;
         this._cardElement = this._getCardElement(selector);
         this._cardImg = this._cardElement.querySelector('.card__img');
-        this.cardRemove = this._cardElement.querySelector('.card__urn');
-        this.cardLike = this._cardElement.querySelector('.card__button');
+        this._cardRemove = this._cardElement.querySelector('.card__urn');
+        this._cardLike = this._cardElement.querySelector('.card__button');
         this._createCard()
     }
 
@@ -21,22 +21,22 @@ export default class Card {
 
     _handleCardClick() {
         this._cardImg.addEventListener('click', () => {
-            openPopup(popupCard);
             popupImg.src = this._cardImg.src;
             popupImg.alt = this._cardImg.alt;
             popupCaption.textContent = this._cardImg.alt;
+            openPopup(popupCard);
         })
     }
 
     _handleRemove() {
-        this.cardRemove.addEventListener('click', () => {
-            cardRemove.closest('.card').remove();
+        this._cardRemove.addEventListener('click', () => {
+            this._cardRemove.closest('.card').remove();
         })
     }
 
     _handleLiked() {
-        cardLike.addEventListener('click', () => {
-            cardLike.classList.toggle('card__button_type_active');
+        this._cardLike.addEventListener('click', () => {
+            this._cardLike.classList.toggle('card__button_type_active');
         })
     }
 

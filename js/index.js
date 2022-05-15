@@ -48,24 +48,24 @@ for (const btn of closePopupButtonList) {
 }
 
 buttonPopupEdit.addEventListener('click', () => {
+    nameInput.value = nameProfile.textContent;
+    subTextInput.value = subTextProfile.textContent;
     openPopupProfile(popupEdit);
     editFormValidator.resetValidation();
 })
 
 buttonPopupAdd.addEventListener('click', () => {
     openPopup(popupAdd);
-    nameInput.value = nameProfile.textContent;
-    subTextInput.value = subTextProfile.textContent;
 })
 
-editFormElem.addEventListener('submit', editForm);
-addFormElem.addEventListener('submit', addImageForm);
+editFormElem.addEventListener('submit', handleProfileFormSubmit);
+addFormElem.addEventListener('submit', handleAddImageForm);
 
 function createCard(data) {
     return new Card(data, '#template-card');
 }
 
-function addImageForm(evt) {
+function handleAddImageForm(evt) {
     const data = {
         name: inputTitle.value,
         link: inputLink.value,
@@ -76,7 +76,7 @@ function addImageForm(evt) {
     addFormElem.reset();
 }
 
-function editForm(evt) {
+function handleProfileFormSubmit(evt) {
     nameProfile.textContent = nameInput.value;
     subTextProfile.textContent = subTextInput.value;
     closePopup(popupEdit);
