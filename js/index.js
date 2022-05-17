@@ -55,6 +55,7 @@ buttonPopupEdit.addEventListener('click', () => {
 })
 
 buttonPopupAdd.addEventListener('click', () => {
+    addImageFormValodator.resetValidation();
     openPopup(popupAdd);
 })
 
