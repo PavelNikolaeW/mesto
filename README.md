@@ -24,7 +24,6 @@ and was optimized for working on screens from 320px up to 1280px.
 ----
 # Проект: [Место.](https://pavelnikolaew.github.io/mesto/index.html) Интерактивный сервис для добавления фотографий для Яндекс.Практикум
 ----
-
 ## Интро
 Адаптивный и интерактивный сайт-сервис для добавления фотографий с бэкендом на JavaScript.
 Сайт создан по [макету Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
