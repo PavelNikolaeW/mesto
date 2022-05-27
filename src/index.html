@@ -5,24 +5,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="stylesheet" href="./pages/index.css" />
     <title>Место</title>
   </head>
 
   <body class="page">
     <header class="header container">
-      <img src="./images/header/logo.svg" alt="МЕСТО росся" class="header__logo" />
+      <img src="<%=require('./images/header/logo.svg')%>" alt="МЕСТО росся" class="header__logo" />
     </header>
     <main class="main container">
       <section class="profile">
         <div class="profile__person person">
-          <img src="./images/profile/kusto.jpg" alt="Жак-Ив Кусто" class="person__img" />
+          <img src="<%=require('./images/profile/kusto.jpg')%>" alt="Жак-Ив Кусто" class="person__img" />
           <div class="person__text">
             <div class="person__group">
               <h1 class="person__name">Жак-Ив Кусто</h1>
               <button type="button" class="person__button popup-link" id="edit">
                 <img
-                  src="./images/profile/pencil.svg"
+                  src="<%=require('./images/profile/pencil.svg')%>"
                   alt="карандаш"
                   class="person__button-img"
                 />
@@ -33,7 +32,7 @@
         </div>
         <button type="button" class="profile__button popup-link" id="add">
           <img
-            src="./images/profile/plus.svg"
+            src="<%=require('./images/profile/plus.svg')%>"
             alt="плюс"
             class="profile__button-img"
           />
@@ -126,10 +125,6 @@
         </div>
       </li>
     </template>
-    <script type='module' src="./js/formValidator.js"></script>
-    <script type='module' src="./js/Card.js"></script>
-    <script type='module' src="./js/utils.js"></script>
-    <script type='module' src="./js/index.js"></script>	
   </body>
 
 </html>
