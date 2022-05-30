@@ -20,22 +20,14 @@
             <div class="person__group">
               <h1 class="person__name">Жак-Ив Кусто</h1>
               <button type="button" class="person__button popup-link" id="edit">
-                <img
-                  src="<%=require('./images/profile/pencil.svg')%>"
-                  alt="карандаш"
-                  class="person__button-img"
-                />
+                <img src="<%=require('./images/profile/pencil.svg')%>" alt="карандаш" class="person__button-img" />
               </button>
             </div>
             <p class="person__subtext">Исследователь океана</p>
           </div>
         </div>
         <button type="button" class="profile__button popup-link" id="add">
-          <img
-            src="<%=require('./images/profile/plus.svg')%>"
-            alt="плюс"
-            class="profile__button-img"
-          />
+          <img src="<%=require('./images/profile/plus.svg')%>" alt="плюс" class="profile__button-img" />
         </button>
       </section>
       <section class="cards">
@@ -55,8 +47,10 @@
                 type="text"
                 name="name"
                 class="popup__input popup__input_type_name"
-								required minlength="2" maxlength="40"
-								placeholder="имя"
+                required
+                minlength="2"
+                maxlength="40"
+                placeholder="имя"
               />
               <span class="popup__input-error"></span>
             </label>
@@ -65,8 +59,10 @@
                 type="text"
                 name="subtext"
                 class="popup__input popup__input_type_subtext"
-								required minlength="2" maxlength="200"
-								placeholder="подпись"
+                required
+                minlength="2"
+                maxlength="200"
+                placeholder="подпись"
               />
               <span class="popup__input-error"></span>
             </label>
@@ -82,28 +78,30 @@
           <h2 class="popup__title">Новое место</h2>
           <form action="#" name="addForm" class="popup__form" novalidate>
             <label for="title" class="popup__label">
-							<input
-								type="text"
-								placeholder="Название"
-								class="popup__input popup__input_type_title"
-								required minlength="2" maxlength="30"
-							/>
-							<span class="popup__input-error"></span>
-						</label>
+              <input
+                type="text"
+                placeholder="Название"
+                class="popup__input popup__input_type_title"
+                required
+                minlength="2"
+                maxlength="30"
+              />
+              <span class="popup__input-error"></span>
+            </label>
             <label for="link" class="popup__label">
-							<input
-								type="url"
-								name="link"
-								placeholder="Ссылка на картинку"
-								class="popup__input popup__input_type_link"
-								required
-							/>
-							<span class="popup__input-error"></span>
-						</label>
+              <input
+                type="url"
+                name="link"
+                placeholder="Ссылка на картинку"
+                class="popup__input popup__input_type_link"
+                required
+              />
+              <span class="popup__input-error"></span>
+            </label>
             <button type="submit" class="popup__submit">Создать</button>
           </form>
         </div>
-        <button type="button" class="popup__close "></button>
+        <button type="button" class="popup__close"></button>
       </div>
     </div>
     <div class="popup popup_card">

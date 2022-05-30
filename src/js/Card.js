@@ -1,9 +1,8 @@
-import { popupCard, popupImg, popupCaption, openPopup } from './utils.js';
-
 export default class Card {
-    constructor(data, selector) {
-        this._name = data.name;
-        this._link = data.link;
+    constructor({ name, link, handleCardClick }, selector) {
+        this._name = name;
+        this._link = link;
+        this._handleCardClick = handleCardClick
         this._cardElement = this._getCardElement(selector);
         this._cardImg = this._cardElement.querySelector('.card__img');
         this._cardRemove = this._cardElement.querySelector('.card__urn');
@@ -17,15 +16,6 @@ export default class Card {
             .content
             .querySelector('.card')
             .cloneNode(true);
-    }
-
-    _handleCardClick() {
-        this._cardImg.addEventListener('click', () => {
-            popupImg.src = this._cardImg.src;
-            popupImg.alt = this._cardImg.alt;
-            popupCaption.textContent = this._cardImg.alt;
-            openPopup(popupCard);
-        })
     }
 
     _handleRemove() {
@@ -43,7 +33,12 @@ export default class Card {
     _setEventListeners() {
         this._handleRemove();
         this._handleLiked();
-        this._handleCardClick();
+        this._cardImg.addEventListener('click', () => {
+            this._handleCardClick({
+                name: this._name,
+                link: this._link
+            });
+        })
     }
 
     _createCard() {
