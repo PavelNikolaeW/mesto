@@ -73,10 +73,11 @@ function handleAddImageForm() {
     const card = createCard(popupWithFormAdd.getInputValues());
     sectionCardList.addItem(card.getElement());
     popupWithFormAdd.close();
-    addFormElem.reset();
+    addImageFormValodator.resetValidation();
 }
 
 function handleProfileFormSubmit() {
     userInfo.setUserInfo(popupWithFormEdit.getInputValues());
     popupWithFormEdit.close();
+    editFormValidator.resetValidation();
 }
