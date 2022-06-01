@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // плагин 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // объединяет css файлы в один
 
 module.exports = {
-    entry: { main: './src/js/index.js' },
+    entry: { main: './src/pages/index.js' },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'main.js',
