@@ -69,15 +69,15 @@ function createCard(data) {
         '#template-card');
 }
 
-function handleAddImageForm() {
-    const card = createCard(popupWithFormAdd.getInputValues());
+function handleAddImageForm(inputsValues) {
+    const card = createCard(inputsValues);
     sectionCardList.addItem(card.getElement());
     popupWithFormAdd.close();
     addImageFormValodator.resetValidation();
 }
 
-function handleProfileFormSubmit() {
-    userInfo.setUserInfo(popupWithFormEdit.getInputValues());
+function handleProfileFormSubmit(inputsValues) {
+    userInfo.setUserInfo(inputsValues);
     popupWithFormEdit.close();
     editFormValidator.resetValidation();
 }
