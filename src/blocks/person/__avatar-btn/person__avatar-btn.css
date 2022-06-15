@@ -1,0 +1,23 @@
+.person__avatar-btn {
+  position: absolute;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  padding: 0;
+  opacity: 0;
+  border: 0;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+
+.person__avatar-btn:hover {
+  cursor: pointer;
+  background-color: rgb(0, 0, 0, .8);
+  background-size: 26px 26px;
+  background-image: url(../../../images/profile/pencil.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 1;
+  transition: opacity .8s ease 0s;
+}

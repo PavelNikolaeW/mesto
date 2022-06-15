@@ -15,18 +15,22 @@
     <main class="main container">
       <section class="profile">
         <div class="profile__person person">
-          <img src="<%=require('./images/profile/kusto.jpg')%>" alt="Жак-Ив Кусто" class="person__img" />
+          <div class="person__avatar-vrapper">
+            <img class="person__img" alt="" />
+            <button type="button" class="person__avatar-btn popup-link" id="avatar" title="Изменить аватар">
+            </button>
+          </div>
           <div class="person__text">
             <div class="person__group">
               <h1 class="person__name">Жак-Ив Кусто</h1>
-              <button type="button" class="person__button popup-link" id="edit">
+              <button type="button" class="person__button popup-link" id="edit" title="Редактировать профиль">
                 <img src="<%=require('./images/profile/pencil.svg')%>" alt="карандаш" class="person__button-img" />
               </button>
             </div>
             <p class="person__subtext">Исследователь океана</p>
           </div>
         </div>
-        <button type="button" class="profile__button popup-link" id="add">
+        <button type="button" class="profile__button popup-link" id="add" title="Добавить фото">
           <img src="<%=require('./images/profile/plus.svg')%>" alt="плюс" class="profile__button-img" />
         </button>
       </section>
@@ -37,6 +41,38 @@
     <footer class="footer container">
       <p class="footer__copywriting">© 2020 Mesto Russia</p>
     </footer>
+    <div class="popup" id="popup-delete">
+      <div class="popup__card-container">
+        <div class="popup__body popup__body-small">
+          <h2 class="popup__title">Вы уверены?</h2>
+          <form action="#" name="deleteForm" class="popup__form" novalidate>
+            <button type="submit" class="popup__submit">Да</button>
+          </form>
+        </div>
+        <button type="button" class="popup__close"></button>
+      </div>
+    </div>
+    <div class="popup" id="popup-avatar">
+        <div class="popup__container">
+          <div class="popup__body">
+            <h2 class="popup__title">Обновить аватар</h2>
+            <form action="#" name="changeAvatar" class="popup__form" novalidate>
+              <label for="avatar" class="popup__label">
+                <input
+                  type="url"
+                  name="avatar"
+                  class="popup__input popup__input_type_link"
+                  required
+                  placeholder="Ссылка на картинку"
+                />
+                <span class="popup__input-error"></span>
+              </label>
+              <button type="submit" class="popup__submit">Сохранить</button>
+            </form>
+          </div>
+          <button type="button" class="popup__close"></button>
+        </div>
+      </div>
     <div class="popup" id="popup-edit">
       <div class="popup__container">
         <div class="popup__body">
@@ -57,7 +93,7 @@
             <label for="subtext" class="popup__label">
               <input
                 type="text"
-                name="subtext"
+                name="about"
                 class="popup__input popup__input_type_subtext"
                 required
                 minlength="2"
@@ -120,7 +156,11 @@
         <img src="в3ц" alt="в3ц" class="card__img" />
         <div class="card__footer">
           <h2 class="card__title"></h2>
-          <button type="button" class="card__button"></button>
+          <div class="card__like">
+              <button type="button" class="card__button">
+              </button>
+              <span class="card__counter">0</span>
+          </div>
         </div>
       </li>
     </template>

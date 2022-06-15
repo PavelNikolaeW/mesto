@@ -1,4 +1,6 @@
 .card__button {
+  display: flex;
+  flex-direction: column;
   border: none;
   background-color: var(--card-footer);
   background-image: url(../../../images/photo/like.svg);

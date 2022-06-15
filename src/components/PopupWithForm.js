@@ -10,6 +10,13 @@ export default class PopupWithForm extends Popup {
         this.inputsValues = {};
     }
 
+    loading(status) {
+        if (status)
+            this._button.textContent = 'Сохранение...';
+        else
+            this._button.textContent = 'Сохраненить';
+    }
+
     _getInputValues() {
         this._inputs.forEach(input => { this.inputsValues[input.name] = input.value });
         return this.inputsValues;
