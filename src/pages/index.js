@@ -62,13 +62,11 @@ const sectionCardList = new Section({
     }
 }, '.cards__list');
 
-let userID = 0;
 
 api.getData([api.getUserInfo(), api.getInitialCards()])
     .then((data) => {
         const [userData, cardList] = data;
         userInfo.setUserInfo(userData);
-        userID = userInfo.getUserId();
         sectionCardList.renderItems(cardList.reverse(), userInfo.getUserId());
     })
     .catch(err => console.log(err));
@@ -110,7 +108,7 @@ function handleAddImageForm(inputsValues) {
     this.loading(true);
     api.addCard(inputsValues)
         .then((data) => {
-            const card = createCard(data, userID);
+            const card = createCard(data, userInfo.getUserId());
             sectionCardList.addItem(card.getElement());
             popupWithFormAdd.close();
             addImageFormValodator.resetValidation();
