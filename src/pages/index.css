@@ -93,3 +93,4 @@
 @import url(../blocks/card/__footer/card__footer.css);
 @import url(../blocks/card/__button/card__button.css);
 @import url(../blocks/card/__button/_type/card__button_type_active.css);
+@import url(../blocks/card/__urn/_display/card__urn_display_none.css);

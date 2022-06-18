@@ -8,12 +8,17 @@ export default class PopupConfirm extends Popup {
         this._handleFormSubmit = handleFormSubmit;
     }
 
-    open(cardId) {
+    open(cardId, cardElement) {
         super.open();
+        this._cardId = cardId;
+        this._cardElement = cardElement;
+    }
+
+    setEventListeners() {
+        super.setEventListeners();
         this._popup.addEventListener('submit', evt => {
             evt.preventDefault();
-            this._handleFormSubmit(cardId);
-            super.close();
+            this._handleFormSubmit(this._cardId, this._cardElement);
         })
     }
 
@@ -21,6 +26,6 @@ export default class PopupConfirm extends Popup {
         if (status)
             this._button.textContent = 'Сохранение...';
         else
-            this._button.textContent = 'Сохраненить';
+            this._button.textContent = 'Да';
     }
 }

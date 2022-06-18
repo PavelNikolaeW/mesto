@@ -26,7 +26,6 @@ export default class Api {
     }
 
     setUserInfo(newInfo, path = this._myUser) {
-        console.log(newInfo);
         return fetch(this._url + path, {
                 method: 'PATCH',
                 headers: this._headers,
@@ -59,14 +58,14 @@ export default class Api {
     }
 
     addLike(cardId, path = this._cards, like = this._like) {
-        return fetch(`${this._url}${path}/${cardId}${this._like}`, {
+        return fetch(`${this._url}${path}/${cardId}${like}`, {
             method: "PUT",
             headers: this._headers
         }).then(this._checkResponse)
     }
 
     deleteLike(cardId, path = this._cards, like = this._like) {
-        return fetch(`${this._url}${path}/${cardId}${this._like}`, {
+        return fetch(`${this._url}${path}/${cardId}${like}`, {
             method: "DELETE",
             headers: this._headers
         }).then(this._checkResponse)

@@ -13,8 +13,4 @@ export default class Section {
             this._renderer(item, userId);
         })
     }
-
-    deleteCard(cardId) {
-        document.querySelector
-    }
 }

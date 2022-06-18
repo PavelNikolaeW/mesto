@@ -64,10 +64,6 @@ export default class FormValidator {
     }
 
     enableValidation() {
-        this._formElement.addEventListener('submit', (evt) => {
-            evt.preventDefault();
-        })
-
         for (const fildElement of this._formElemList) {
             if (fildElement.tagName == "INPUT") {
                 this._setEventListeners(fildElement);

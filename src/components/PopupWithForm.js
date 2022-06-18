@@ -14,7 +14,7 @@ export default class PopupWithForm extends Popup {
         if (status)
             this._button.textContent = 'Сохранение...';
         else
-            this._button.textContent = 'Сохраненить';
+            this._button.textContent = 'Сохранить';
     }
 
     _getInputValues() {

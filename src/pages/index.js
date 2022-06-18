@@ -29,13 +29,13 @@ const validConfig = {
     inputErrorClass: 'form__input_type_error',
 }
 
-const editFormValidator = new FormValidator(validConfig, editFormElem);
-const addImageFormValodator = new FormValidator(validConfig, addFormElem);
-const changeAvatarFormValodator = new FormValidator(validConfig, changeAvatarElem);
+const formEditValidator = new FormValidator(validConfig, editFormElem);
+const formAddImageValodator = new FormValidator(validConfig, addFormElem);
+const formChangeAvatarValodator = new FormValidator(validConfig, changeAvatarElem);
 
-editFormValidator.enableValidation();
-addImageFormValodator.enableValidation();
-changeAvatarFormValodator.enableValidation();
+formEditValidator.enableValidation();
+formAddImageValodator.enableValidation();
+formChangeAvatarValodator.enableValidation();
 
 const popupWithImage = new PopupWithImage('.popup_card');
 const popupWithFormEdit = new PopupWithForm('#popup-edit', handleProfileFormSubmit);
@@ -58,7 +58,7 @@ const userInfo = new UserInfo({
 const sectionCardList = new Section({
     renderer: (item, userId) => {
         const card = createCard(item, userId);
-        sectionCardList.addItem(card.getElement());
+        sectionCardList.addItem(card);
     }
 }, '.cards__list');
 
@@ -76,32 +76,46 @@ const buttonPopupEdit = document.querySelector('#edit');
 buttonPopupEdit.addEventListener('click', () => {
     popupWithFormEdit.setInputValues(userInfo.getUserInfo());
     popupWithFormEdit.open();
-    editFormValidator.resetValidation();
+    formEditValidator.resetValidation();
 })
 
 const buttonPopupAdd = document.querySelector('#add');
 
 buttonPopupAdd.addEventListener('click', () => {
-    addImageFormValodator.resetValidation();
+    formAddImageValodator.resetValidation();
     popupWithFormAdd.open();
 })
 
 const buttonChangeAvatar = document.querySelector('#avatar');
 
 buttonChangeAvatar.addEventListener('click', () => {
-    changeAvatarFormValodator.resetValidation();
+    formChangeAvatarValodator.resetValidation();
     popupWithAvatar.open();
 })
 
 function createCard(data, userId) {
-    return new Card(
+    const card = new Card(
         data,
         userId,
         data => popupWithImage.open(data),
-        cardId => popupConfirmDelete.open(cardId),
-        cardId => api.addLike(cardId),
-        cardId => api.deleteLike(cardId),
+        () => popupConfirmDelete.open(card.cardId, card.getElement()),
+        (whoLiked, userId, cardId) => {
+            if (whoLiked.find(user => user._id === userId)) {
+                api.deleteLike(cardId)
+                    .then(data => {
+                        card._setLiked(false, data.likes);
+                    })
+                    .catch(err => console.log(err))
+            } else {
+                api.addLike(cardId)
+                    .then((data) => {
+                        card._setLiked(true, data.likes);
+                    })
+                    .catch(err => console.log(err))
+            }
+        },
         '#template-card');
+    return card.getElement();
 }
 
 function handleAddImageForm(inputsValues) {
@@ -109,11 +123,10 @@ function handleAddImageForm(inputsValues) {
     api.addCard(inputsValues)
         .then((data) => {
             const card = createCard(data, userInfo.getUserId());
-            sectionCardList.addItem(card.getElement());
+            sectionCardList.addItem(card);
             popupWithFormAdd.close();
-            addImageFormValodator.resetValidation();
         })
-        .catch(err => console.log(err))
+        .catch(console.log)
         .finally(() => this.loading(false));
 }
 
@@ -123,17 +136,17 @@ function handleProfileFormSubmit(inputsValues) {
         .then(data => {
             userInfo.setUserInfo(data);
             popupWithFormEdit.close();
-            editFormValidator.resetValidation();
         })
         .catch(err => console.log(err))
         .finally(() => this.loading(false));
 }
 
-function handleConfirmDelete(cardId) {
+function handleConfirmDelete(cardId, cardElement) {
     this.loading(true);
     api.deleteCard(cardId)
         .then(() => {
-            document.getElementById(cardId).remove()
+            cardElement.remove();
+            popupConfirmDelete.close();
         })
         .catch(err => console.log(err))
         .finally(() => this.loading(false));
@@ -144,7 +157,6 @@ function handleChangeAvatar(inputsValues) {
     api.changeAvatar(inputsValues)
         .then((data) => {
             popupWithAvatar.close();
-            changeAvatarFormValodator.resetValidation();
             userInfo.setUserInfo(data);
         })
         .catch(err => console.log(err))
