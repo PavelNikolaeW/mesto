@@ -58,4 +58,5 @@
 .card__footer{align-items:center;background-color:var(--card-footer);border-bottom-left-radius:10px;border-bottom-right-radius:10px;display:flex;height:79px;justify-content:space-between;padding:0 15px 0 21px}
 .card__button{background-color:var(--card-footer);background-image:url(87ed371465c7a6a1cd01.svg);border:none;display:flex;flex-direction:column;height:19px;min-width:22px;transition:opacity .8s ease 0s}.card__button:hover{cursor:pointer;opacity:.4}
 .card__button_type_active{background-image:url(fe17a515669479b1e649.svg)}
+.card__urn_display_none{display:none}
 
