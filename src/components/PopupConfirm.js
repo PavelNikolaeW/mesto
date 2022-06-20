@@ -24,7 +24,7 @@ export default class PopupConfirm extends Popup {
 
     loading(status) {
         if (status)
-            this._button.textContent = 'Сохранение...';
+            this._button.textContent = 'Удаление...';
         else
             this._button.textContent = 'Да';
     }

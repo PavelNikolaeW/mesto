@@ -64,7 +64,7 @@ export default class Card {
 
     getElement() { return this._cardElement }
 
-    _setLiked(isActive, whoLiked) {
+    setLiked(isActive, whoLiked) {
         this._whoLiked = whoLiked;
         this._likeCounter.textContent = whoLiked.length
         this._cardLike.classList.toggle('card__button_type_active', isActive);

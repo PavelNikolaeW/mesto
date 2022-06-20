@@ -19,9 +19,9 @@ const api = new Api({
     }
 });
 
-const editFormElem = document.querySelector('[name="editForm"]');
-const addFormElem = document.querySelector('[name="addForm"]');
-const changeAvatarElem = document.querySelector('[name="changeAvatar"]');
+const formEditElem = document.querySelector('[name="editForm"]');
+const formAddElem = document.querySelector('[name="addForm"]');
+const formChangeAvatarElem = document.querySelector('[name="changeAvatar"]');
 const validConfig = {
     btnSelector: '.popup__submit',
     btnDisabledClass: 'popup__submit_type_disabled',
@@ -29,9 +29,9 @@ const validConfig = {
     inputErrorClass: 'form__input_type_error',
 }
 
-const formEditValidator = new FormValidator(validConfig, editFormElem);
-const formAddImageValodator = new FormValidator(validConfig, addFormElem);
-const formChangeAvatarValodator = new FormValidator(validConfig, changeAvatarElem);
+const formEditValidator = new FormValidator(validConfig, formEditElem);
+const formAddImageValodator = new FormValidator(validConfig, formAddElem);
+const formChangeAvatarValodator = new FormValidator(validConfig, formChangeAvatarElem);
 
 formEditValidator.enableValidation();
 formAddImageValodator.enableValidation();
@@ -103,13 +103,13 @@ function createCard(data, userId) {
             if (whoLiked.find(user => user._id === userId)) {
                 api.deleteLike(cardId)
                     .then(data => {
-                        card._setLiked(false, data.likes);
+                        card.setLiked(false, data.likes);
                     })
                     .catch(err => console.log(err))
             } else {
                 api.addLike(cardId)
                     .then((data) => {
-                        card._setLiked(true, data.likes);
+                        card.setLiked(true, data.likes);
                     })
                     .catch(err => console.log(err))
             }
